@@ -16,7 +16,7 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        Account clint1 = new Account(1000);
+        Account clint = new Account(1000);
 
         boolean isExit = true;
 
@@ -42,7 +42,7 @@ public class Main {
 
             switch (option) {
 
-                case 1 -> clint1.showBalance();
+                case 1 -> clint.showBalance();
 
                 case 2 -> {
                     System.out.print("Enter the amount to Deposit: ");
@@ -57,7 +57,7 @@ public class Main {
                     double dep_amt = scanner.nextDouble();
 
                     try {
-                        clint1.deposit(dep_amt);
+                        clint.deposit(dep_amt);
                     } catch (NegativeFundException e) {
                         System.out.println(e.getMessage());
                     }
@@ -76,7 +76,7 @@ public class Main {
                     double withdraw_amt = scanner.nextDouble();
 
                     try {
-                        clint1.withdrawal(withdraw_amt);
+                        clint.withdrawal(withdraw_amt);
                     } catch (InsufficientFundsException | NegativeFundException e) {
                         System.out.println(e.getMessage());
                     }

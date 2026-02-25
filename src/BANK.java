@@ -30,5 +30,9 @@ public interface BANK {
      * @throws NegativeFundException if the deposit amount is negative
      */
     void deposit(double deposit_amt) throws NegativeFundException;
+
+    default void sayHello() {
+        System.out.println("Hello World");
+    }
 }
 
